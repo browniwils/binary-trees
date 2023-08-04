@@ -3,8 +3,8 @@
 
 /**
  * _helper_bst - checks if tree is a valid binary search tree
- * @tree: tree to check.
- * @low: value of the smallest node visited 
+ * @tree: tree to check
+ * @low: value of the smallest node visited
  * @high: value of the largest node visited
  * Return: 1 if valid, otherwise, 0.
  */
