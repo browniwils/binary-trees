@@ -99,9 +99,8 @@ bst_t *bst_remove(bst_t *root, int value)
 	return (root);
 }
 
-int successor(bst_t *node);
 /**
- * bal - calculates balance factor of a AVL.
+ * balance - calculates balance factor of a AVL.
  * @tree: tree.
  * Return: balanced factor.
  */
@@ -123,13 +122,10 @@ void balance(avl_t **tree)
 }
 
 /**
- * avl_remove - Removes a node from an AVL tree.
- *
- * @root: A pointer to the root node of the tree for removing a node.
- * @value: The value to remove in the tree.
- *
- * Return: A pointer to the new root node of the tree after
- *         removing the desired value, and after rebalancing
+ * avl_remove - removes node from an AVL tree.
+ * @root: root node.
+ * @value: value to remove in the tree.
+ * Return: new root node
  */
 avl_t *avl_remove(avl_t *root, int value)
 {

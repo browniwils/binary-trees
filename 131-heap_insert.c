@@ -22,7 +22,7 @@ size_t binary_tree_size(const binary_tree_t *tree)
  */
 heap_t *heap_insert(heap_t **root, int value)
 {
-	heap_t *tree, *new_n, *flip_n;
+	heap_t *tree, *new_n, *fl_n;
 	int size, leafs, sub, bit, level, temp;
 
 	if (!root)
@@ -42,12 +42,12 @@ heap_t *heap_insert(heap_t **root, int value)
 	new_n = binary_tree_node(tree, value);
 	leafs & 1 ? (tree->right = new_n) : (tree->left = new_n);
 
-	flip_n = new_n;
-	for (; flip_n->parent && (flip_n->n > flip_n->parent->n); flip_n = flip_n->parent)
+	fl_n = new_n;
+	for (; fl_n->parent && (fl_n->n > fl_n->parent->n); fl_n = fl_n->parent)
 	{
-		temp = flip_n->n;
-		flip_n->n = flip_n->parent->n;
-		flip_n->parent->n = temp;
+		temp = fl_n->n;
+		fl_n->n = fl_n->parent->n;
+		fl_n->parent->n = temp;
 		new_n = new_n->parent;
 	}
 
